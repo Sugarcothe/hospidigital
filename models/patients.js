@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const UserSchema = new mongoose.Schema(
+const PatentsSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
@@ -44,6 +44,8 @@ const UserSchema = new mongoose.Schema(
       type: Number,
       required: true,
       unique: true,
+      min: 6,
+      max: 6,
     },
     married: {
       type: Boolean,
@@ -65,11 +67,11 @@ const UserSchema = new mongoose.Schema(
       },
       relationship: {
         type: String,
-        required: true
-      }
+        required: true,
+      },
     },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("User", UserSchema);
+export default mongoose.model("Patients", PatentsSchema);
