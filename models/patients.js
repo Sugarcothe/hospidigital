@@ -44,32 +44,32 @@ const PatentsSchema = new mongoose.Schema(
       type: Number,
       required: true,
       unique: true,
-      min: 6,
-      max: 6,
     },
     married: {
       type: Boolean,
       default: false,
     },
-    nextOfKin: {
-      fullName: {
-        type: String,
-        required: true,
-        unique: true,
+    nextOfKin: [
+      {
+        fullName: {
+          type: String,
+          required: true,
+          unique: true,
+        },
+        phone: {
+          type: Number,
+          required: true,
+        },
+        address: {
+          type: String,
+          required: true,
+        },
+        relationship: {
+          type: String,
+          required: true,
+        },
       },
-      phone: {
-        type: Number,
-        required: true,
-      },
-      address: {
-        type: String,
-        required: true,
-      },
-      relationship: {
-        type: String,
-        required: true,
-      },
-    },
+    ],
   },
   { timestamps: true }
 );
