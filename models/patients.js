@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const UserSchema = new mongoose.Schema(
+const PatentsSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
@@ -49,27 +49,29 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    nextOfKin: {
-      fullName: {
-        type: String,
-        required: true,
-        unique: true,
+    nextOfKin: [
+      {
+        fullName: {
+          type: String,
+          required: true,
+          unique: true,
+        },
+        phone: {
+          type: Number,
+          required: true,
+        },
+        address: {
+          type: String,
+          required: true,
+        },
+        relationship: {
+          type: String,
+          required: true,
+        },
       },
-      phone: {
-        type: Number,
-        required: true,
-      },
-      address: {
-        type: String,
-        required: true,
-      },
-      relationship: {
-        type: String,
-        required: true
-      }
-    },
+    ],
   },
   { timestamps: true }
 );
 
-export default mongoose.model("User", UserSchema);
+export default mongoose.model("Patients", PatentsSchema);

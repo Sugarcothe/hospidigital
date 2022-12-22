@@ -1,9 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import patientsRouter from "./models/patients.js"
+import patientsRouter from "./routes/patients.js";
 
 const app = express();
+
 dotenv.config();
 mongoose.set("strictQuery", false);
 
@@ -16,7 +17,7 @@ try {
 
 app.use(express.json());
 
-app.use("/api/patients", patientsRouter)
+app.use("/api/patients", patientsRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`server is listening on port ${process.env.PORT}`);
