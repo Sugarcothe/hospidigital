@@ -6,3 +6,5 @@ export const LoginAndRegisterRouter = express.Router();
 
 LoginAndRegisterRouter.post("/registerPatients", register)
 
+export default router;
+

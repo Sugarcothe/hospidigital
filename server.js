@@ -1,9 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+
 import {LoginAndRegisterRouter} from './routes/patients.js'
 
 const app = express();
+
 dotenv.config();
 mongoose.set("strictQuery", false);
 
@@ -17,7 +19,7 @@ mongoose.set("strictQuery", false);
 // }
 
 // To handle errors before initial connection
-mongoose.connect('mongodb://127.0.0.1:27017/test').catch(error => console.log(error));
+mongoose.connect(process.env.MONGODB).catch(error => console.log(error));
 
 
 // To handle errors after initial connection
