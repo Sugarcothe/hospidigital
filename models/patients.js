@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const PatentsSchema = new mongoose.Schema(
+const PatientsSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
@@ -74,4 +74,4 @@ const PatentsSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Patients", PatentsSchema);
+export const usersPatientsModel =  mongoose.model("User", PatientsSchema);

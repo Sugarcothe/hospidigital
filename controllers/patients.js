@@ -1,8 +1,8 @@
-import Patients from "../models/patients.js";
+import {usersPatientsModel} from "../models/patients.js";
 
 export const register = async (req, res, next) => {
   try {
-    const newPatients = new Patients({
+    const newPatients = new usersPatientsModel({
       ...req.body,
     });
 

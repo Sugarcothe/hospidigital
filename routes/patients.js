@@ -2,8 +2,9 @@ import express from "express"
 import { register } from "../controllers/patients.js";
 
 
-const router = express.Router();
+export const LoginAndRegisterRouter = express.Router();
 
-router.post("/registerPatients", register)
+LoginAndRegisterRouter.post("/registerPatients", register)
 
 export default router;
+
