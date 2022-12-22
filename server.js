@@ -9,26 +9,16 @@ const app = express();
 dotenv.config();
 mongoose.set("strictQuery", false);
 
-
-// you can use await keyword outside function. this is why i commented it
-// try {
-//   await mongoose.connect(process.env.MONGODB);
-//   console.log("Connected to database successfully");
-// } catch (error) {
-//   console.log(error);
-// }
-
-// To handle errors before initial connection
 mongoose.connect(process.env.MONGODB).catch(error => console.log(error));
 
 
 // To handle errors after initial connection
 mongoose.connection.on('error', (err)=>{
-  console.log('Error occur after initial connection on mongoDb db: '+err.message)
+  console.log('Error occur after initial connection on mongoDb db: ' +err)
 })
 
 mongoose.connection.on('connect', ()=>{
-console.log('successfully makes its initial connection to the MongoDB server, or when Mongoose reconnects after losing connectivity')
+console.log('DB Connection established')
 })
 
 app.use(express.json());

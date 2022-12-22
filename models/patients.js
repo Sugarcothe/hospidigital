@@ -54,7 +54,6 @@ const PatientsSchema = new mongoose.Schema(
         fullName: {
           type: String,
           required: true,
-          unique: true,
         },
         phone: {
           type: Number,
@@ -74,4 +73,4 @@ const PatientsSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const usersPatientsModel =  mongoose.model("User", PatientsSchema);
+export const usersPatientsModel =  mongoose.model("patients", PatientsSchema);
