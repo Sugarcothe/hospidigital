@@ -1,7 +1,14 @@
-import patients from "../models/patients";
+import Patients from "../models/patients";
 
-export const register = async(req, res, next) => {
-    const newPatients = new patients({...req.body})
+export const register = async (req, res, next) => {
+  try {
+    const newPatients = new Patients({
+      ...req.body,
+    });
+
     await newPatients.save();
-    res.status(200).send("Patients record created successfully")
-}
+    res.status(200).send("User has been created.");
+  } catch (err) {
+    next(err);
+  }
+};

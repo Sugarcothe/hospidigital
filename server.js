@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import patientsRouter from "./models/patients.js"
 
 const app = express();
+
 dotenv.config();
 mongoose.set("strictQuery", false);
 
