@@ -7,7 +7,7 @@ export const doctorSchema = new mongoose.Schema({
   middleName: {
     type: String,
   },
-  lasttName: {
+  lastName: {
     type: String,
     required: true,
   },
@@ -32,14 +32,14 @@ export const doctorSchema = new mongoose.Schema({
     required: true,
   },
   department: {
-    type: Number,
+    type: String,
     unique: true,
     required: true,
   },
-  gender: [{
-    male: String,
-    female: String,
-  }]
+  gender: {
+    type: String,
+    unique: true,
+  }
 });
 
 export const doctorsModel = mongoose.model("doctors", doctorSchema);
