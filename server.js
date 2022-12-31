@@ -23,7 +23,8 @@ console.log('DB Connection established')
 
 app.use(express.json());
 
-app.use("/api/vi/auth", LoginAndRegisterRouter)
+app.use("/api/vi/auth", patientsRouter)
+app.use("/api/vi/auth", doctorsRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`server is listening on port ${process.env.PORT}`);
